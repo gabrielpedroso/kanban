@@ -10,6 +10,7 @@ import { IdGenerator } from "../../shared/domain/id-generator";
 import { RegisterUserUseCase } from "./application/register-user.use-case";
 import { LoginUseCase } from "./application/login.use-case";
 import { IdModule } from "../../shared/infra/id/id.module";
+import { AuthController } from "./presentation/auth.controller";
 
 @Module({
     imports: [
@@ -31,7 +32,7 @@ import { IdModule } from "../../shared/infra/id/id.module";
         }), 
         IdModule
     ],
-    controllers: [],
+    controllers: [AuthController],
     providers: [
         { provide: UserRepository, useClass: PrismaUserRepository },
         { provide: PasswordHasher, useClass: ScryptPasswordHasher },

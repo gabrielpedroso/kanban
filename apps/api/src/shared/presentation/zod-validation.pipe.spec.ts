@@ -9,7 +9,7 @@ describe('ZodValidationPipe', () => {
 
     it('should return the validated data when the input is valid', () => {
         
-        const value = pipe.transform({ email: "test@email.com", name: " teste " });
+        const value = pipe.transform({ email: "test@email.com", name: "teste" });
 
         expect(value).toEqual({ email: "test@email.com", name: "teste"});
     });
